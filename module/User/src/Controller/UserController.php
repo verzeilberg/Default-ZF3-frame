@@ -52,13 +52,15 @@ class UserController extends AbstractActionController
             return;
         }
         
+        $page = $this->params()->fromQuery('page', 1);
+        
         $query = $this->entityManager->getRepository(User::class)
                 ->findAllUsers();
         
         $adapter = new DoctrineAdapter(new ORMPaginator($query, false));
         $paginator = new Paginator($adapter);
         $paginator->setDefaultItemCountPerPage(3);        
-        //$paginator->setCurrentPageNumber($page);
+        $paginator->setCurrentPageNumber($page);
          	         
         return new ViewModel([
             'users' => $paginator
