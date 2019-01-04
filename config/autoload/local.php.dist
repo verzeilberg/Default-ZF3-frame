@@ -11,32 +11,19 @@
  * credentials from accidentally being committed into version control.
  */
 
-use Doctrine\DBAL\Driver\PDOMySql\Driver as PDOMySqlDriver;
-
 return [
-    // Configuration for your SMTP server (for sending outgoing mail).
-    'smtp' => [
-        'name'              => 'localhost.localdomain',
-        'host'              => '127.0.0.1',
-        'port'              => 25,
-        'connection_class'  => 'plain',
-        'connection_config' => [
-            'username' => '<user>',
-            'password' => '<pass>',
-        ],
-    ],
-    // Database connection configuration.
     'doctrine' => [
         'connection' => [
             'orm_default' => [
-                'driverClass' => PDOMySqlDriver::class,
+                'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
                 'params' => [
-                    'host'     => '127.0.0.1',                    
-                    'user'     => 'roledemo',
-                    'password' => '<password>',
-                    'dbname'   => 'roledemo',
+                    'host'     => 'localhost',
+                    'port'     => '3306',
+                    'user'     => '',
+                    'password' => '',
+                    'dbname'   => '',
                 ]
-            ],            
-        ],        
+            ]
+        ]
     ],
 ];

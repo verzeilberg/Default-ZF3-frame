@@ -5,3 +5,6 @@ data/cache/*
 !data/cache/.gitkeep
 phpunit.xml
 /nbproject/private/
+nbproject/*
+public/img/*
+.idea/*
