@@ -1,0 +1,3 @@
+[submodule "User"]
+    path = module/User
+    url = https://github.com/verzeilberg/Login.git
